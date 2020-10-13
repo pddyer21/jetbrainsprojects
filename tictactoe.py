@@ -9,28 +9,20 @@ def isnumber(x):
 
 def iswinner(board):
     if board[0] == board[1] == board[2] != " " and board[3:5].count("X") != 3 and board[3:5].count("O") != 3 and board[6:8].count("X") != 3 and board[6:8].count("O") != 3:
-        # print("{} wins".format(board[0]))
         return [True, board[0]]
     elif board[3] == board[4] == board[5] != " " and board[0:2].count("X") != 3 and board[0:2].count("O") != 3 and board[6:8].count("X") != 3 and board[6:8].count("O") != 3:
-        # print("{} wins".format(board[3]))
         return [True, board[3]]
     elif board[6] == board[7] == board[8] != " " and board[0:2].count("X") != 3 and board[0:2].count("O") != 3 and board[3:5].count("X") != 3 and board[3:5].count("O") != 3:
-        # print("{} wins".format(board[6]))
         return [True, board[6]]
     elif board[0] == board[3] == board[6] != " " and ([board[1], board[4], board[7]] != ["X", "X", "X"] and [board[1], board[4], board[7]] != ["O", "O", "O"]) and ([board[2], board[5], board[8]] != ["X", "X", "X"] and [board[2], board[5], board[8]] != ["O", "O", "O"]):
-        # print("{} wins".format(board[0]))
         return [True, board[0]]
     elif board[1] == board[4] == board[7] != " " and ([board[0], board[3], board[6]] != ["X", "X", "X"] and [board[0], board[3], board[6]] != ["O", "O", "O"]) and ([board[2], board[5], board[8]] != ["X", "X", "X"] and [board[2], board[5], board[8]] != ["O", "O", "O"]):
-        # print("{} wins".format(board[1]))
         return [True, board[1]]
     elif board[2] == board[5] == board[8] != " " and ([board[0], board[3], board[6]] != ["X", "X", "X"] and [board[0], board[3], board[6]] != ["O", "O", "O"]) and ([board[1], board[4], board[7]] != ["X", "X", "X"] and [board[1], board[4], board[7]] != ["O", "O", "O"]):
-        # print("{} wins".format(board[2]))
         return [True, board[2]]
     elif board[0] == board[4] == board[8] != " ":
-        # print("{} wins".format(board[0]))
         return [True, board[0]]
     elif board[2] == board[4] == board[6] != " ":
-        # print("{} wins".format(board[2]))
         return [True, board[2]]
     else:
         return [False, None]
